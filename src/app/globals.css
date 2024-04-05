@@ -3,9 +3,10 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --bg: white;
+  --text-color: black;
+  --softBg: #f0f0f0;
+  --softTextColor: #626262;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -15,19 +16,31 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.container {
+  min-height: 100vh;
+  width: 100% !important;
+  background-color: var(--bg);
+  color: var(--text-color);
+}
+.wrapper {
+  max-width: 1536px;
+  margin: auto;
+  background-color: aqua;
 }
