@@ -1,12 +1,16 @@
+"use client";
 import Image from "next/image";
-import React from "react";
+import React, { useContext } from "react";
 import ThemeToggle from "../themeToggle/ThemeToggle";
 import Link from "next/link";
 import AuthLinks from "../authLinks/AuthLinks";
+import { ThemeContext } from "@/context/ThemeContext";
+import { motion } from "framer-motion";
 
 interface Props {}
 
 const Navbar = (props: Props) => {
+  const { theme, toggleTheme } = useContext(ThemeContext);
   return (
     <div className="flex items-center px-4 justify-between w-full h-100 bg-[white] p-8">
       <div className="flex flex-grow ">
@@ -44,7 +48,7 @@ const Navbar = (props: Props) => {
         <h1 className="text-2xl font-semibold">Oyamo Odari</h1>
       </div>
       <div className="flex flex-grow items-center flex-row justify-evenly">
-        <ThemeToggle />
+        <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
         <Link href="">Homepage</Link>
         <Link href="">Contact</Link>
         <Link href="">About</Link>
