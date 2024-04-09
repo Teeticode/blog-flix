@@ -4,6 +4,7 @@ import Featured from "@/components/featured/Featured";
 import Footer from "@/components/footer/Footer";
 import Menu from "@/components/Menu/Menu";
 import Navbar from "@/components/navbar/Navbar";
+import SideBar from "@/components/sidebar/SideBar";
 import Link from "next/link";
 
 export default function Home() {

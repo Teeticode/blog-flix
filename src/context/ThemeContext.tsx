@@ -3,8 +3,9 @@ import { createContext, useState } from "react";
 import { getFromStorage } from "@/utils/GetFromLocalStorage";
 
 // Define the shape of your theme context
+export type Theme = "light" | "dark";
 type ThemeContextType = {
-  theme: string;
+  theme: Theme | string;
   toggleTheme: () => void;
 };
 
@@ -22,7 +23,7 @@ export const ThemeContextProvider = ({
   children,
 }: ThemeContextProviderProps) => {
   // Retrieve theme from local storage or default to "light"
-  const initialTheme = getFromStorage("theme", "light");
+  const initialTheme = localStorage.getItem("theme") ?? "light";
 
   // Define state for theme
   const [theme, setTheme] = useState<string>(initialTheme);

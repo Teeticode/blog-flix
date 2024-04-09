@@ -5,6 +5,7 @@
 :root {
   --bg: white;
   --text-color: black;
+  --primary-color:"#2A04F4"
   --softBg: #f0f0f0;
   --softTextColor: #626262;
 }
@@ -43,4 +44,8 @@ body {
   max-width: 1536px;
   margin: auto;
   background-color: aqua;
+}
+
+.primary-color {
+  color: var(--primary-color); /* Using the custom CSS variable */
 }
