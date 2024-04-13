@@ -43,9 +43,13 @@ body {
 .wrapper {
   max-width: 1536px;
   margin: auto;
-  background-color: aqua;
+  background-color: #333333;
 }
 
 .primary-color {
   color: var(--primary-color); /* Using the custom CSS variable */
+}
+
+.hidden:{
+  display: none !important;
 }

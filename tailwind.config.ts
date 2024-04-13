@@ -14,6 +14,11 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
     },
+    screens: {
+      xm: { max: "639px" }, // Add a new breakpoint for 'xm' (extra-small)
+      sm: "640px",
+      lg: "986px",
+    },
   },
   plugins: [],
 };

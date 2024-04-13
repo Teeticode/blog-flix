@@ -11,7 +11,7 @@ const ThemeToggle = ({ theme, toggleTheme }: Props) => {
   return (
     <div
       onClick={() => toggleTheme()}
-      className="flex items-center relative justify-between w-3/13 rounded-full p-3 bg-[black]"
+      className="flex items-center absolute justify-between w-3/13 rounded-full p-3 bg-[black]"
     >
       <Image src={"/moon.png"} alt="" width={18} height={18} />
       <div

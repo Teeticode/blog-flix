@@ -5,9 +5,10 @@ import React, { useContext, useEffect, useState } from "react";
 type Props = {
   children: string;
   className?: string;
+  color?: string;
 };
 
-const H1 = ({ children, className }: Props) => {
+const H1 = ({ children, className, color }: Props) => {
   const [theme1, setTheme] = useState("");
   const { theme } = useContext(ThemeContext);
   useEffect(() => {
@@ -15,7 +16,9 @@ const H1 = ({ children, className }: Props) => {
   }, []);
   return (
     <h1
-      className={`${
+      className={`
+      ${color ? `text-[${color}]` : ""}
+      ${
         className
           ? className
           : (className = `text-2xl font-semibold ${

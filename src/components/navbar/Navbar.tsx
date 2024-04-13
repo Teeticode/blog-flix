@@ -13,16 +13,18 @@ import { BiMenuAltLeft } from "react-icons/bi";
 import { GrFormClose } from "react-icons/gr";
 import MotionDiv from "../globals/MotionDiv";
 import SideBar from "../sidebar/SideBar";
+import useStyleStore from "@/store/styleUtils";
 
 interface Props {}
 
 const Navbar = (props: Props) => {
   const { theme, toggleTheme } = useContext(ThemeContext);
-  const [openSideBar, setOpenSideBar] = useState(false);
+
+  const { setSideBarOpen, sideBarOpen } = useStyleStore((state) => state);
   return (
     <Div className="flex items-center px-4 justify-between w-full h-100 p-8">
-      {openSideBar ? (
-        <SideBar />
+      {sideBarOpen ? (
+        <SideBar openSideBar={sideBarOpen} />
       ) : (
         <Div className="flex flex-grow ">
           <Image
@@ -62,30 +64,34 @@ const Navbar = (props: Props) => {
       </Div>
       <Div className="flex flex-grow items-center flex-row justify-evenly">
         <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
-        <Div className={`flex flex-row lg:flex md:hidden sm:hidden`}>
+        <Div
+          className={`flex flex-row lg:flex md:hidden xm:hidden sm:hidden  oyamo_page_links`}
+        >
           <Link href="">
-            <P className="mr-3">Homepage</P>
+            <P className="mr-3 sm:hidden md:hidden lg:flex xl:flex">Homepage</P>
           </Link>
           <Link href="">
-            <P className="mr-3">Contact</P>
+            <P className="mr-3 sm:hidden md:hidden lg:flex xl:flex">Contact</P>
           </Link>
           <Link href="">
-            <P className="mr-3">About</P>
+            <P className="mr-3 sm:hidden md:hidden lg:flex xl:flex">About</P>
           </Link>
         </Div>
-        <Div className={`flex flex-row sm:hidden md:flex lg:flex`}>
+        <Div
+          className={`flex flex-row xm:hidden sm:hidden md:hidden lg:flex xl:flex`}
+        >
           <AuthLinks />
         </Div>
         <MotionDiv
           onPress={() => {
-            setOpenSideBar(!openSideBar);
+            setSideBarOpen(!sideBarOpen);
           }}
-          className="flex flex-row mr-4"
+          className="flex flex-row mr-4 absolute right-0"
           initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.4, type: "spring" }}
         >
-          {openSideBar ? (
+          {sideBarOpen ? (
             <GrFormClose
               style={{
                 color: theme === "dark" ? "#FFFFFF" : "#000000",
@@ -97,7 +103,7 @@ const Navbar = (props: Props) => {
             <BiMenuAltLeft
               style={{
                 color: theme === "dark" ? "#FFFFFF" : "#000000",
-                fontSize: 25,
+                fontSize: 30,
                 cursor: "pointer",
               }}
             />

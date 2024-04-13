@@ -11,11 +11,10 @@ interface Props extends HTMLMotionProps<"div"> {
   key?: any;
 }
 
-const MotionDiv = ({ children, className, onPress, key }: Props) => {
+const MotionDiv = ({ children, className, onPress }: Props) => {
   const { theme } = useContext(ThemeContext);
   return (
     <motion.div
-      key={key ? key : theme}
       //   initial={{ opacity: 0, scaleX: 0 }}
       //   animate={{ opacity: 1, scaleX: 1 }}
       //   transition={{ duration: 0.4, type: "tween" }}

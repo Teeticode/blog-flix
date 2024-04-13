@@ -18,7 +18,7 @@ const ThemeContextMain = ({ children }: Props) => {
       key={theme}
       initial={{ opacity: 0, scaleX: 0 }}
       animate={{ opacity: 1, scaleX: 1 }}
-      transition={{ duration: 0.4, type: "tween" }}
+      transition={{ duration: 0.1, type: "spring" }}
       className={`${theme === "dark" ? "bg-[black]" : "bg-[white]"}`}
     >
       {children}
