@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 :root {
   --bg: white;
   --text-color: black;
@@ -26,6 +27,7 @@
 body {
   max-width: 100%;
   overflow-x: hidden;
+  font-family: "Nunito Sans", sans-serif !important;
 }
 
 @layer utilities {
@@ -43,9 +45,41 @@ body {
 .wrapper {
   max-width: 1536px;
   margin: auto;
-  background-color: aqua;
+  background-color: #333333;
 }
 
 .primary-color {
   color: var(--primary-color); /* Using the custom CSS variable */
+}
+
+.hidden:{
+  display: none !important;
+}
+
+.nunito_sans_regular {
+  font-family: "Nunito Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100,
+    "YTLC" 500;
+}
+.nunito_sans_semibold {
+  font-family: "Nunito Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100,
+    "YTLC" 500;
+}
+.nunito_sans_bold {
+  font-family: "Nunito Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100,
+    "YTLC" 500;
 }
